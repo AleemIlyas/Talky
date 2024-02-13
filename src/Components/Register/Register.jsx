@@ -71,10 +71,15 @@ export default function Register() {
     dispatch(signUpUser(data));
   };
 
+  const showError = () => {
+    const message = error.response.data.error || error.message;
+    toast.error(message);
+  };
+
   return (
     <div className="flex flex-row">
       <ToastContainer />
-      {error ? toast.error(error) : null}
+      {error ? showError() : null}
       <div className="w-3/5 z-0 h-[100dvh] bg-[#41529e]">
         <img
           className="w-3/4 z-0 h-full object-contain m-auto"

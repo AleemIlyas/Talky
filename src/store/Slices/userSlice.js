@@ -36,7 +36,7 @@ export const loginUser = createAsyncThunk('User/login', async (data, thunkAPI) =
         return response.data
     }
     catch (err) {
-        return thunkAPI.rejectWithValue(err.response.data)
+        return thunkAPI.rejectWithValue(err)
     }
 })
 
@@ -46,7 +46,7 @@ export const signUpUser = createAsyncThunk('User/SignUp', async (data, thunkAPI)
         return response.data
     }
     catch (err) {
-        return thunkAPI.rejectWithValue(err.response.data)
+        return thunkAPI.rejectWithValue(err)
     }
 })
 
@@ -56,8 +56,7 @@ export const LogOutUser = createAsyncThunk('User/LogOut', async (thunkAPI) => {
         return response.data
     }
     catch (err) {
-        console.log(err)
-        return thunkAPI.rejectWithValue(err.response.data)
+        return thunkAPI.rejectWithValue(err)
     }
 })
 
