@@ -1,0 +1,8 @@
+.logoHeading{
+        background: rgb(1,0,36);
+        background: linear-gradient(90deg, rgba(1,0,36,1) 0%, rgba(30,30,45,1) 24%, rgba(113,137,147,1) 40%);
+        background-clip: text; /* Apply the gradient to the text only */
+        -webkit-background-clip: text; /* For Safari support */
+        color: transparent;
+        text-shadow: -3px -2px rgb(175, 169, 169);
+}
