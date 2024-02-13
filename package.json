@@ -14,7 +14,7 @@
     "@ionic/react": "^7.4.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@wavesurfer/react": "^1.0.4",
-    "axios": "^1.5.0",
+    "axios": "^1.6.7",
     "framer-motion": "^10.18.0",
     "gsap": "^3.12.2",
     "ionicons": "^7.1.2",
