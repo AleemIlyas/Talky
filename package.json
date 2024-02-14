@@ -11,7 +11,7 @@
     "clear": "vite clear"
   },
   "dependencies": {
-    "@ionic/react": "^7.4.0",
+    "@ionic/react": "^7.7.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@vitejs/plugin-react": "^4.2.1",
     "@wavesurfer/react": "^1.0.4",
