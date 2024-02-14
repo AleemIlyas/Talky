@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiInstance = axios.create({
-  baseURL: 'https://talky-backend.vercel.app/'
+  baseURL: 'https://talky-backend-dev-hzez.3.us-1.fl0.io/'
 })
 
 apiInstance.interceptors.request.use((config) => {

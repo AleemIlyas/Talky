@@ -1,11 +1,10 @@
 import { io } from 'socket.io-client';
 
 // "undefined" means the URL will be computed from the `window.location` object
-const URL = 'https://talky-backend.vercel.app';
+const URL = 'https://talky-backend-dev-hzez.3.us-1.fl0.io/';
 
 export const socket = io(URL, {
     extraHeaders: {
-        "Access-Control-Allow-Origin": "https://talky-gules.vercel.app",
         "authorization": localStorage.getItem("token") || ""
     }
 });
