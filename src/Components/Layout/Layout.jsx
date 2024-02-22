@@ -205,7 +205,7 @@ export default function Layout() {
 
       timeOutRef.current = setTimeout(() => {
         handleCallTimeOut();
-      }, 10000);
+      }, 30000);
 
       newPeer.on("stream", (remoteStream) => {
         remoteAudioRef.current.srcObject = remoteStream;

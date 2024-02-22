@@ -7,5 +7,5 @@ export default defineConfig({
   plugins: [
     nodePolyfills({}),
     react(),
-  ]
+  ],
 });

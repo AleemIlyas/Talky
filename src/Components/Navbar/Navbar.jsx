@@ -13,9 +13,9 @@ export default function Navbar({ showResponsive, setResponsive }) {
   const navigate = useNavigate();
   const { name, _id } = useSelector((state) => state.user.userData);
   const dispatch = useDispatch();
-  const { chats } = useSelector((state) => state.chat);
+  const { chats, loading } = useSelector((state) => state.chat);
   const [users, setUsers] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [isloading, setisLoading] = useState(false);
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Navbar({ showResponsive, setResponsive }) {
 
   useEffect(() => {
     if (searchValue.trim() === "") return;
-    setLoading(true);
+    setisLoading(true);
 
     const delayDebounceFn = setTimeout(() => {
       findUsers();
@@ -65,7 +65,7 @@ export default function Navbar({ showResponsive, setResponsive }) {
     apiInstance(`/api/user/searchUser?search=${searchValue}`)
       .then((res) => {
         setUsers(res.data);
-        setLoading(false);
+        setisLoading(false);
       })
       .catch((err) => console.log(err));
   };
@@ -91,7 +91,9 @@ export default function Navbar({ showResponsive, setResponsive }) {
       </div>
       <Search value={searchValue} changeHandler={changeHandler} />
       <div className="overflow-y-auto flex-1">
-        {!searchValue ? (
+        {loading ? (
+          <SpinnerUser />
+        ) : !searchValue ? (
           chats?.length == 0 || !chats ? (
             <p className="text-center">Search a User and have fun!</p>
           ) : (
@@ -106,7 +108,7 @@ export default function Navbar({ showResponsive, setResponsive }) {
               );
             })
           )
-        ) : loading ? (
+        ) : isloading ? (
           <SpinnerUser />
         ) : !users || users.length == 0 ? (
           <p className="text-center">No user to show!</p>
